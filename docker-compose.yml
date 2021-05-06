@@ -1,0 +1,56 @@
+version: '3'
+
+services:
+
+  ####### PHP ######
+  server:
+    build:
+      context: .
+      dockerfile: .docker/php8.dev.dockerfile
+    environment:
+      - TZ=America/Chicago
+    ports:
+      - 80:80
+    volumes:
+      - ./app:/app
+      - ./.docker/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    command: php -S 0.0.0.0:80 -t /app/html
+    secrets:
+      - ssh_key
+
+
+  ####### Maria DB ########
+  db:
+    image: mariadb
+    environment:
+      - TZ=America/Chicago
+      - MYSQL_ROOT_PASSWORD=i57z9*UIuJQ!
+      - collation-server=utf8mb4_unicode_ci
+      - character-set-server=utf8mb4
+      - MYSQL_DATABASE=oauth2
+    ports:
+      - 5000:3306
+    volumes:
+      - ./startup_databases:/docker-entrypoint-initdb.d
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - TZ=America/Chicago
+      - PMA_USER=root
+      - PMA_PASSWORD=i57z9*UIuJQ!
+    ports:
+      - 9082:80
+
+  ####### Redis #######
+  redis:
+    image: redis
+  phpredisadmin:
+    image:  erikdubbelboer/phpredisadmin
+    environment:
+      - REDIS_1_HOST=redis
+    ports:
+      - 9083:80
+
+secrets:
+  ssh_key:
+    file: ~/.ssh/id_rsa
