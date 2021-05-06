@@ -1,6 +1,6 @@
-# OAuth2 Server 
+# Docker Compose PHP Server 
 
-An OAuth2 server written in PHP that can be quickly modified to meet specific needs.
+A high speed low drag PHP setup with Docker Compose.
 
 ## Quick start
 
