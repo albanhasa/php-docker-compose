@@ -10,7 +10,7 @@ services:
     environment:
       - TZ=America/Chicago
     ports:
-      - 80:80
+      - 8001:80
     volumes:
       - ./app:/app
       - ./.docker/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
@@ -27,11 +27,11 @@ services:
       - MYSQL_ROOT_PASSWORD=i57z9*UIuJQ!
       - collation-server=utf8mb4_unicode_ci
       - character-set-server=utf8mb4
-      - MYSQL_DATABASE=oauth2
+      - MYSQL_DATABASE=database_name
     ports:
       - 5000:3306
     volumes:
-      - ./startup_databases:/docker-entrypoint-initdb.d
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
