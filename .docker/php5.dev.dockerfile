@@ -52,6 +52,6 @@ RUN curl -LsS https://codeception.com/codecept.phar -o /usr/local/bin/codecept \
     && chmod a+x /usr/local/bin/codecept
 
 ############################################################################
-# Setup XDebug No longer supported for PHP 5 and older.
+# Setup XDebug Last PHP 5 version is 2.5.5
 ############################################################################
-#RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
