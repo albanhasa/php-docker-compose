@@ -11,7 +11,7 @@ Make sure you have Docker and Docker Compose installed.
 [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 From the directory root of the project run `docker-compose up` open your browser to 
-[http:\\localhost:8001](http:\\localhost:8001).
+[http://localhost:8001](http://localhost:8001).
 
 To stop the Docker container, from the Docker CLI windows press [Control]-C.
 
@@ -97,7 +97,7 @@ to improve performance.
 
 To access to Redis web tool open [http://localhost:9083](http://localhost:9083).
 
-# Load Testing
+# Performance Testing
 
 TBD
 

@@ -3,7 +3,7 @@ version: '3'
 services:
 
   ####### PHP ######
-  server:
+  dev-server:
     build:
       context: .
       dockerfile: .docker/php8.dev.dockerfile
@@ -19,6 +19,15 @@ services:
     secrets:
       - ssh_key
 
+  prod-server:
+    image: php:8-apache
+    environment:
+      - TZ=America/Chicago
+    ports:
+      - 8002:80
+    volumes:
+      - ./app:/var/www
+      - ./app/html:/var/www/html
 
   ####### Maria DB ########
   db:
@@ -52,6 +61,14 @@ services:
       - REDIS_1_HOST=redis
     ports:
       - 9083:80
+
+
+  ######## Apache AB #######
+  performance-testing:
+    image: httpd
+    volumes:
+      - .performance-testing/:/var/www
+
 
 secrets:
   ssh_key:
