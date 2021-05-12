@@ -6,4 +6,5 @@ initialized with the provided configuration variables. Furthermore, it will exec
 .sh, .sql, .sql.gz, and .sql.xz that are found in /docker-entrypoint-initdb.d. Files will be executed in 
 alphabetical order. .sh files without file execute permission are sourced rather than executed. You can easily 
 populate your mariadb services by mounting a SQL dump into that directory and provide custom images with 
-contributed data. SQL files will be imported by default to the database specified by the MYSQL_DATABASE variable.
+contributed data. SQL files will be imported by default to the database specified by the MYSQL_DATABASE variable
+found in the `docker-compose.yml` file.
