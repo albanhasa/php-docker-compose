@@ -51,6 +51,7 @@ services:
   phpredisadmin:
     image:  erikdubbelboer/phpredisadmin
     environment:
+      - TZ=America/Chicago
       - REDIS_1_HOST=redis
     ports:
       - 9083:80
