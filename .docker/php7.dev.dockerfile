@@ -55,3 +55,4 @@ RUN curl -LsS https://codeception.com/codecept.phar -o /usr/local/bin/codecept \
 # Setup XDebug
 ############################################################################
 RUN pecl install xdebug && docker-php-ext-enable xdebug
+RUN echo "export PHP_INI_SCAN_DIR=/cli.ini" >> ~/.bashrc
