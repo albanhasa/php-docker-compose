@@ -29,15 +29,15 @@ RUN mkdir -p ~/.ssh \
 ############################################################################
 RUN cd ~ \
     && mkdir bin \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/root/bin --filename=composer \
-    && chmod u+x bin/composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer \
+    && chmod u+x ~/bin/composer
 # Add our script files to the path so they can be found
-ENV PATH /root/bin:~/.composer/vendor/bin:$PATH
+ENV PATH ~/bin:~/.composer/vendor/bin:$PATH
 
 #############################################################################
 # Setup PHP developer tools
 #############################################################################
-RUN composer -n --no-ansi global require \
+RUN ~/bin/composer -n --no-ansi global require \
        phpunit/phpunit \
        phing/phing \
        sebastian/phpcpd \
@@ -48,8 +48,8 @@ RUN composer -n --no-ansi global require \
 ############################################################################
 # Isntall Codeception native
 ############################################################################
-RUN curl -LsS https://codeception.com/codecept.phar -o /root/bin/codecept \
-    && chmod u+x /root/bin/codecept
+RUN curl -LsS https://codeception.com/codecept.phar -o ~/bin/codecept \
+    && chmod u+x ~/bin/codecept
 
 ############################################################################
 # Setup XDebug Last PHP 5 version is 2.5.5
