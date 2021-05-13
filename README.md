@@ -38,6 +38,10 @@ The current configuration will look for an SSH key in `~/.ssh/id_rsa`.
 PHP Composer [https://getcomposer.org/](https://getcomposer.org/) is installed by default and can be run inside
 the dev-server container with the command `composer`.
 
+`docker exec -it php-docker-compose_dev-server_1 bash`
+
+user@45640a57cf9f:/app$ `composer (command)`
+
 ## PHP Testing
 
 Several tools for testing PHP code are installed by default.
