@@ -87,8 +87,8 @@ default database name.
 
 ### Startup DB
 
-A startup database can be created by placing a scrip in the `docker-entrypoint-initdb.d` directory.  See the README.md
-file in that directory for detail.
+A startup database can be created by placing a scrip in the `docker-entrypoint-initdb.d` directory.  See the 
+[README.md](docker-entrypoint-initdb.d/README.md) file in that directory for detail.
 
 ## Redis
 
