@@ -32,7 +32,7 @@ RUN cd ~ \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/root/bin --filename=composer \
     && chmod u+x bin/composer
 # Add our script files to the path so they can be found
-ENV PATH /var/www/vendor/bin:/root/bin:~/.composer/vendor/bin:$PATH
+ENV PATH /root/bin:~/.composer/vendor/bin:$PATH
 
 #############################################################################
 # Setup PHP developer tools
