@@ -1,5 +1,9 @@
 version: '3'
 
+secrets:
+  ssh_key:
+    file: ~/.ssh/id_rsa
+
 services:
 
   ####### PHP ######
@@ -74,6 +78,3 @@ services:
       - 9084:80
 
 
-secrets:
-  ssh_key:
-    file: ~/.ssh/id_rsa
