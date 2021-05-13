@@ -34,6 +34,7 @@ CMD ["/bin/bash"]
 
 ############################################################################
 # Install PHP Composer https://getcomposer.org/download/
+# Add "--version=1.10.22" after "php --" to get a specific version.
 ############################################################################
 RUN cd ~ \
     && mkdir bin \

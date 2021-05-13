@@ -14,7 +14,7 @@ RUN apt-get -y update \
 ############################################################################
 # Setup XDebug https://xdebug.org/download/historical
 # xdebug-x.x.x for specific version
-# Last PHP 5 version is 2.5.5
+# Last PHP 5 XDebug version is 2.5.5
 ############################################################################
 RUN pecl install xdebug-2.5.5 \
     && docker-php-ext-enable xdebug \
@@ -35,6 +35,7 @@ CMD ["/bin/bash"]
 
 ############################################################################
 # Install PHP Composer https://getcomposer.org/download/
+# Add "--version=1.10.22" after "php --" to get a specific version.
 ############################################################################
 RUN cd ~ \
     && mkdir bin \
