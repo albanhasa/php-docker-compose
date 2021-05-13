@@ -105,7 +105,7 @@ of the debugger or other libraries.
 Be sure to tell composer to install the production libraries using `composer install --no-dev` from the
 development container.
 
-# Performance Testing Apache AB
+# Performance Testing (Apache AB)
 
 The performance-testing container is used for testing the code relative to itself.  You can use this 
 tool to test different versions of PHP.  Different caching methodologies and different database select.
@@ -113,5 +113,8 @@ tool to test different versions of PHP.  Different caching methodologies and dif
 The idea is that using this tool you can see if your code is getting faster of slower for any given changes.  
 
 You can keep a record of past performance tests to make a before and after comparison.
+
+To run the sample test, open a bash shell into the `performance-testing` container.  From that change directory 
+into performance-testing and run `./test1.sh`.
 
 [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)
