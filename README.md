@@ -120,3 +120,12 @@ To run the sample test, open a bash shell into the `performance-testing` contain
 into performance-testing and run `./test1.sh`.
 
 [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)
+
+## A Common Testing scenario 
+
+After testing and checking in the code to the dev branch, checkout the qa branch and run the same tests.  
+Using this as a baseline you can see if your code has gotten faster or slower.
+
+# Final Notes
+
+This is just a starting point.  Use this project a template for starting or moving your project to docker.
