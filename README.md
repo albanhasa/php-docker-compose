@@ -51,10 +51,18 @@ Several tools for testing PHP code are installed by default.
 PhpUnit [https://phpunit.de/](https://phpunit.de/) is installed by default and can be run inside the server 
 container with `phpunit`.
 
+`docker exec -it php-docker-compose_dev-server_1 bash`
+
+user@45640a57cf9f:/app$ `phpunit (command)`
+
 ### Codeception
 
 Codeception [https://codeception.com/](https://codeception.com/) is installed by default and can be run inside
 the dev-server container with `codeception`.
+
+`docker exec -it php-docker-compose_dev-server_1 bash`
+
+user@45640a57cf9f:/app$ `codeception (command)`
 
 ### Other code testing tools
 
