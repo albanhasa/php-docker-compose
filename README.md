@@ -36,7 +36,7 @@ The current configuration will look for an SSH key in `~/.ssh/id_rsa`.
 ## Composer
 
 PHP Composer [https://getcomposer.org/](https://getcomposer.org/) is installed by default and can be run inside
-the server container with the command `composer`.
+the dev-server container with the command `composer`.
 
 ## PHP Testing
 
@@ -50,11 +50,11 @@ container with `phpunit`.
 ### Codeception
 
 Codeception [https://codeception.com/](https://codeception.com/) is installed by default and can be run inside
-the server container with `codeception`.
+the dev-server container with `codeception`.
 
 ### Other code testing tools
 
-Other tools included in the container are phing, phpcpd, phploc, phpmd and php_codesniffer.
+Other tools included in the dev-server container include phing, phpcpd, phploc, phpmd and php_codesniffer.
 
 ## XDebug
 
