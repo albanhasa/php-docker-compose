@@ -18,7 +18,7 @@ RUN apt-get -y update \
 ############################################################################
 RUN pecl install xdebug-2.5.5 \
     && docker-php-ext-enable xdebug \
-    && echo "export PHP_INI_SCAN_DIR=/cli.ini" >> ~/.bashrc
+    && echo "alias php='php -c /cli.ini/xdebug.ini'" >> ~/.bashrc
 
 ############################################################################
 # Create proper security higene for enviornemnt.
@@ -32,6 +32,7 @@ RUN useradd -m user \
 USER user
 WORKDIR /app
 CMD ["/bin/bash"]
+RUN echo "alias php='php -c /cli.ini/xdebug.ini'" >> ~/.bashrc
 
 ############################################################################
 # Install PHP Composer https://getcomposer.org/download/
