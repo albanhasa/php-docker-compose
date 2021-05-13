@@ -25,7 +25,7 @@ CREATE TABLE `SomeTable` (
                              `id` int(11) NOT NULL,
                              `SomeText` text DEFAULT NULL,
                              `SomeInt` int(11) DEFAULT NULL,
-                             `DateCreate` date NOT NULL DEFAULT current_timestamp()
+                             `DateCreate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='This is comment on the table';
 
 --
