@@ -9,20 +9,29 @@ RUN apt-get -y update \
        wget \
        git \
        zip \
-       unzip \
-       zlib1g-dev \
-       libpng-dev \
-       libzip-dev \
-       libldap2-dev
+       unzip
 
 ############################################################################
+# Setup XDebug https://xdebug.org/download/historical
+# xdebug-x.x.x for specific version
+# Last PHP 5 version is 2.5.5
+############################################################################
+RUN pecl install xdebug-2.5.5 \
+    && docker-php-ext-enable xdebug \
+    && echo "export PHP_INI_SCAN_DIR=/cli.ini" >> ~/.bashrc
+
+############################################################################
+# Create proper security higene for enviornemnt.
 # Manage SSH keys https://medium.com/trabe/use-your-local-ssh-keys-inside-a-docker-container-ea1d117515dc
 ############################################################################
 ENV GIT_SSL_NO_VERIFY="1"
-RUN mkdir -p ~/.ssh \
-    && chown -R root:root ~/.ssh \
-    && echo "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config \
-    && ln -s /run/secrets/ssh_key ~/.ssh/id_rsa
+RUN useradd -m user \
+    && mkdir -p /home/user/.ssh \
+    && echo "Host *\n\tStrictHostKeyChecking no\n" >> /home/user/.ssh/config \
+    && chown -R user:user /home/user/.ssh
+USER user
+WORKDIR /app
+CMD ["/bin/bash"]
 
 ############################################################################
 # Install PHP Composer https://getcomposer.org/download/
@@ -50,10 +59,3 @@ RUN ~/bin/composer -n --no-ansi global require \
 ############################################################################
 RUN curl -LsS https://codeception.com/codecept.phar -o ~/bin/codecept \
     && chmod u+x ~/bin/codecept
-
-############################################################################
-# Setup XDebug Last PHP 5 version is 2.5.5
-############################################################################
-RUN pecl install xdebug-2.5.5 \
-    && docker-php-ext-enable xdebug \
-    && echo "export PHP_INI_SCAN_DIR=/cli.ini" >> ~/.bashrc

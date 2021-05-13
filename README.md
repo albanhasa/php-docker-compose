@@ -73,7 +73,7 @@ cli tools.
 The XDebug configuration for the web can be found in `./dockerfile/http.ini` for each version of PHP.
 
 The web is configured for debugging and development by default.  By having you IDE listen for a XDebug connection
-on port 9000, you should be able to set breakpoint and inspect variables in your IDE.
+on port 9000 you should be able to set breakpoint and inspect variables in your IDE.
 
 ## MariaDB
 
