@@ -48,8 +48,8 @@ RUN composer -n --no-ansi global require \
 ############################################################################
 # Isntall Codeception native
 ############################################################################
-RUN curl -LsS https://codeception.com/codecept.phar -o /usr/local/bin/codecept \
-    && chmod a+x /usr/local/bin/codecept
+RUN curl -LsS https://codeception.com/codecept.phar -o /root/bin/codecept \
+    && chmod u+x /root/bin/codecept
 
 ############################################################################
 # Setup XDebug Last PHP 5 version is 2.5.5
