@@ -97,8 +97,21 @@ to improve performance.
 
 To access to Redis web tool open [http://localhost:9083](http://localhost:9083).
 
-# Performance Testing
+# Simulated Production server
 
-TBD
+The `prod-server` can be used to simulate the code in a production type environment, without the overhead
+of the debugger or other libraries.  
 
-for later: https://gist.github.com/kelvinn/6a1c51b8976acf25bd78
+Be sure to tell composer to install the production libraries using `composer install --no-dev` from the
+development container.
+
+# Performance Testing Apache AB
+
+The performance-testing container is used for testing the code relative to itself.  You can use this 
+tool to test different versions of PHP.  Different caching methodologies and different database select.
+
+The idea is that using this tool you can see if your code is getting faster of slower for any given changes.  
+
+You can keep a record of past performance tests to make a before and after comparison.
+
+[https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)

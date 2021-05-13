@@ -66,8 +66,12 @@ services:
   ######## Apache AB #######
   performance-testing:
     image: httpd
+    environment:
+      - TZ=America/Chicago
     volumes:
-      - .performance-testing/:/var/www
+      - ./performance-testing/:/usr/local/apache2/performance-testing
+    ports:
+      - 9084:80
 
 
 secrets:
