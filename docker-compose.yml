@@ -6,15 +6,15 @@ services:
   dev-server:
     build:
       context: .
-      dockerfile: .docker/php8.dev.dockerfile
+      dockerfile: .docker/php7.dev.dockerfile
     environment:
       - TZ=America/Chicago
     ports:
       - 8001:80
     volumes:
       - ./app:/app
-      - ./.docker/http.ini/php8.xdebug.ini:/http.ini/xdebug.ini
-      - ./.docker/cli.ini/php8.xdebug.ini:/cli.ini/xdebug.ini
+      - ./.docker/http.ini/php7.xdebug.ini:/http.ini/xdebug.ini
+      - ./.docker/cli.ini/php7.xdebug.ini:/cli.ini/xdebug.ini
     command: php -c /http.ini/xdebug.ini -S 0.0.0.0:80 -t /app/html
     secrets:
       - ssh_key

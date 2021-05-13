@@ -19,10 +19,10 @@ RUN apt-get -y update \
 # Manage SSH keys https://medium.com/trabe/use-your-local-ssh-keys-inside-a-docker-container-ea1d117515dc
 ############################################################################
 ENV GIT_SSL_NO_VERIFY="1"
-RUN mkdir -p ~/.ssh
-RUN chown -R root:root ~/.ssh
-RUN echo "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-RUN ln -s /run/secrets/ssh_key ~/.ssh/id_rsa
+RUN mkdir -p ~/.ssh \
+    && chown -R root:root ~/.ssh \
+    && echo "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config \
+    && ln -s /run/secrets/ssh_key ~/.ssh/id_rsa
 
 ############################################################################
 # Install PHP Composer https://getcomposer.org/download/
@@ -54,5 +54,6 @@ RUN curl -LsS https://codeception.com/codecept.phar -o /root/bin/codecept \
 ############################################################################
 # Setup XDebug Last PHP 5 version is 2.5.5
 ############################################################################
-RUN pecl install xdebug-2.5.5 && docker-php-ext-enable xdebug
-RUN echo "export PHP_INI_SCAN_DIR=/cli.ini" >> ~/.bashrc
+RUN pecl install xdebug-2.5.5 \
+    && docker-php-ext-enable xdebug \
+    && echo "export PHP_INI_SCAN_DIR=/cli.ini" >> ~/.bashrc
