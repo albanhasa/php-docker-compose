@@ -105,6 +105,8 @@ of the debugger or other libraries.
 Be sure to tell composer to install the production libraries using `composer install --no-dev` from the
 development container.
 
+The production server is available at [http://localhost:8002](http://localhost:8002).
+
 # Performance Testing (Apache AB)
 
 The performance-testing container is used for testing the code relative to itself.  You can use this 
