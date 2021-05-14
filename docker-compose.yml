@@ -18,10 +18,7 @@ services:
     volumes:
       - ./app:/app
       - ./.docker/php.ini/php8.ini:/usr/local/etc/php/php.ini
-    ### For PHP 5 HTTP debugging:
-    #command: bash -c 'export XDEBUG_CONFIG="remote_autostart=on remote_enable=on"; php -S 0.0.0.0:80 -t /app/html'
-    ### For PHP 7 & 8 debugging:
-    command: bash -c 'export XDEBUG_MODE=debug,develop; php -S 0.0.0.0:80 -t /app/html'
+    command: bash -c 'export XDEBUG_MODE=debug,develop XDEBUG_CONFIG="remote_enable=on"; php -S 0.0.0.0:80 -t /app/html'
     secrets:
       - source: ssh_key
         target: /home/user/.ssh/id_rsa
