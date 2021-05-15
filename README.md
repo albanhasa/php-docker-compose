@@ -152,7 +152,9 @@ Using this as a baseline you can see if your code has gotten faster or slower.
 
 This is just a starting point.  Use this project a template for starting or moving your project to docker.
 
-# Known Issues with Wwindws 10 and WSL
+# Known Issues with Windows 10 and WSL
 
 https://github.com/docker/compose/issues/7899
 exiting and restarting the shell seems to "fix".
+
+Sometimes you will just need to purge all the images `docker system prune -a` and restart Docker.
