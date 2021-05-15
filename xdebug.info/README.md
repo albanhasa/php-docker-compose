@@ -1,0 +1,1 @@
+XDebug will dump it's logs and details into this directory.
