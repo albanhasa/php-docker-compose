@@ -133,6 +133,16 @@ into performance-testing and run `./test1.sh`.
 
 [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
+# Code Profiling
+
+Execution statistics will be dumped in xdebug.info.  You can use profiling tools like 
+PhpStorms' Tools->Analyze XDebug Profile Snapshot.  
+
+The profile file will be called `profile.out`.
+
+Other statistic like garbage collect `gcstats.out` and trace `trace.out.txt` can alos be found 
+in xdebug.info.
+
 ## A Common Testing scenario 
 
 After testing and checking in the code to the dev branch, checkout the qa branch and run the same tests.  
