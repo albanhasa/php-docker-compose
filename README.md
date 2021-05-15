@@ -17,7 +17,8 @@ To stop the Docker container, from the Docker CLI windows press [Control]-C.
 
 ## To change the PHP code
 
-Edit the `docker-compose.yml` file changing the `/app` path appropriately.
+Edit the `docker-compose.yml` file changing the `/app` path appropriately, or replace the code in
+`/app` with your code.
 
 ## To change the PHP version
 
