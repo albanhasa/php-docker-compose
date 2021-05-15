@@ -141,3 +141,8 @@ Using this as a baseline you can see if your code has gotten faster or slower.
 # Final Notes
 
 This is just a starting point.  Use this project a template for starting or moving your project to docker.
+
+# Known Issues with Wwindws 10 and WSL
+
+https://github.com/docker/compose/issues/7899
+exiting and restarting the shell seems to "fix".
