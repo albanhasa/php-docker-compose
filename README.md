@@ -75,18 +75,18 @@ XDebug is installed and configured separately for the command line (CLI) and web
 
 ### Command Line (CLI)
 
-The XDebug configuration for the command line can be found in `./docker/cli.ini` for each version of PHP.
+The XDebug configuration for the command line can be found in `./docker/php/confi.d` for each version of PHP.
 
-The command line is not configured for debugging by default, but is configured for profiling and coverage.  
+The command line is not configured for debugging by default, but is configured for profiling and coverage.
 This is to support PHPUnit and Codeception.  It also keeps the IDE debugger from being triggered by the PHP
 cli tools.
 
 ### Web (HTTP)
 
-The XDebug configuration for the web can be found in `./dockerfile/http.ini` for each version of PHP.
+XDebug for the web with breakpoints is accomplished via the environment variables for PHP.
 
-The web is configured for debugging and development by default.  By having you IDE listen for a XDebug connection
-on port 9000 you should be able to set breakpoint and inspect variables in your IDE.
+During dev server startup the XDebug environment variables override the CLI setup. XDebug will attempt
+to open a connection back to your IDE on port 9000 for web requests.
 
 ## MariaDB
 
