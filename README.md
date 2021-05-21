@@ -45,6 +45,35 @@ user@45640a57cf9f:/app$ `composer (command)`
 
 The current configuration will look for an SSH key in `~/.ssh/id_rsa`.
 
+## XDebug
+
+XDebug is installed and configured separately for the command line (CLI) and web (HTTP).
+
+### Command Line (CLI)
+
+The XDebug configuration for the command line can be found in `./docker/php/confi.d` for each version of PHP.
+
+The command line is not configured for debugging by default, but is configured for profiling and coverage.
+This is to support PHPUnit and Codeception.  It also keeps the IDE debugger from being triggered by the PHP
+cli tools.
+
+### Web (HTTP)
+
+XDebug for the web with breakpoints is accomplished via the environment variables for PHP.
+
+During dev server startup the XDebug environment variables override the CLI setup. XDebug will attempt
+to open a connection back to your IDE on port 9000 for web requests.
+
+### Code Profiling
+
+Execution statistics will be dumped in xdebug.info.  You can use profiling tools like
+PhpStorms' Tools->Analyze XDebug Profile Snapshot.
+
+The profile file will be called `profile.out`.
+
+Other statistic like garbage collect `gcstats.out` and trace `trace.out.txt` can alos be found
+in xdebug.info.
+
 ## PHP Testing
 
 Several tools for testing PHP code are installed by default.
@@ -71,24 +100,6 @@ user@45640a57cf9f:/app$ `codeception (command)`
 
 Other tools included in the dev-server container include phing, phpcpd, phploc, phpmd and php_codesniffer.
 
-## XDebug
-
-XDebug is installed and configured separately for the command line (CLI) and web (HTTP).
-
-### Command Line (CLI)
-
-The XDebug configuration for the command line can be found in `./docker/php/confi.d` for each version of PHP.
-
-The command line is not configured for debugging by default, but is configured for profiling and coverage.
-This is to support PHPUnit and Codeception.  It also keeps the IDE debugger from being triggered by the PHP
-cli tools.
-
-### Web (HTTP)
-
-XDebug for the web with breakpoints is accomplished via the environment variables for PHP.
-
-During dev server startup the XDebug environment variables override the CLI setup. XDebug will attempt
-to open a connection back to your IDE on port 9000 for web requests.
 
 ## MariaDB
 
@@ -136,15 +147,6 @@ into performance-testing and run `./test1.sh`.
 
 [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
-# Code Profiling
-
-Execution statistics will be dumped in xdebug.info.  You can use profiling tools like 
-PhpStorms' Tools->Analyze XDebug Profile Snapshot.  
-
-The profile file will be called `profile.out`.
-
-Other statistic like garbage collect `gcstats.out` and trace `trace.out.txt` can alos be found 
-in xdebug.info.
 
 ## A Common Testing scenario 
 
