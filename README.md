@@ -2,6 +2,8 @@
 
 High speed low drag PHP using Docker.
 
+Development environment as code AKA Infrastructure as code
+
 ## Quick start
 
 Make sure you have Docker and Docker Compose installed.
@@ -30,10 +32,6 @@ Then run `docker-compose build`.
 
 Next, start the docker container by running `docker-compose up`.
 
-## SSH Keys
-
-The current configuration will look for an SSH key in `~/.ssh/id_rsa`.
-
 ## Composer
 
 PHP Composer [https://getcomposer.org/](https://getcomposer.org/) is installed by default and can be run inside
@@ -42,6 +40,10 @@ the dev-server container with the command `composer`.
 `docker exec -it php-docker-compose_dev-server_1 bash`
 
 user@45640a57cf9f:/app$ `composer (command)`
+
+## SSH Keys
+
+The current configuration will look for an SSH key in `~/.ssh/id_rsa`.
 
 ## PHP Testing
 
