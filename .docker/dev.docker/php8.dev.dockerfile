@@ -26,7 +26,8 @@ ENV GIT_SSL_NO_VERIFY="1"
 RUN useradd -m user \
     && mkdir -p /home/user/.ssh \
     && echo "Host *\n\tStrictHostKeyChecking no\n" >> /home/user/.ssh/config \
-    && chown -R user:user /home/user/.ssh
+    && chown -R user:user /home/user/.ssh \
+    && echo "naked\nnaked" | passwd root
 USER user
 WORKDIR /app
 CMD ["/bin/bash"]
