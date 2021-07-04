@@ -39,6 +39,7 @@ services:
       - ./app:/var/www
       - ./app/html:/var/www/html
       - ./.docker/php/php.production.ini:/usr/local/etc/php/php.ini
+      # TODO: Map the prod config to a composer development-disable config.  
 
   ####### Maria DB ########
   db:
