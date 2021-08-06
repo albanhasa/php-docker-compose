@@ -22,5 +22,7 @@ data/DoctrineORMModule/cache/
 # Legacy ZF1
 demos/
 extras/documentation
+
+# JetBrains IDE
 .idea/
-xdebug.info/
+
