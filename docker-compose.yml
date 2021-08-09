@@ -18,7 +18,7 @@ services:
     volumes:
       - ./app:/app
       - ./:/project
-      - ./xdebug.info/dev-server:/xdebug.info
+      - ./xdebug.info:/xdebug.info
       - ./.docker/php/php.development.ini:/usr/local/etc/php/php.ini
       - ./.docker/php/conf.d/xdebug.php7.ini:/usr/local/etc/php/conf.d/xdebug.ini
     # The export in the next line overrides the defaults for XDebug set in the xdebug.ini for HTTP.
