@@ -8,9 +8,8 @@ Development environment as code AKA Infrastructure as code
 
 Make sure you have Docker and Docker Compose installed.
 
-[https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
+[Installing Docker on Windows 10](Documentation/01a_InstallingDockerOnWindows.md)
 
-[https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 
 From the directory root of the project run `docker-compose up` open your browser to 
 [http://localhost:8001](http://localhost:8001).
@@ -114,7 +113,7 @@ default database name.
 ### Startup DB
 
 A startup database can be created by placing a scrip in the `docker-entrypoint-initdb.d` directory.  See the 
-[README.md](docker-entrypoint-initdb.d/README.md) file in that directory for detail.
+[README.md](db-startup/README.md) file in that directory for detail.
 
 ## Redis
 
