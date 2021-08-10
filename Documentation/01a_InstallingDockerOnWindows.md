@@ -11,6 +11,8 @@
   Linux (wsl).
   * Next enable the Virtual Machine Platform.  In the Administrator: Windows PowerShell run (copy and past)
   "dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart".
+  * Download and install the 
+  [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
   * Reboot Windows.
   * Again from the Windows Search Type "powershell" then right-click on `Windows PowerShell` and then 
   `Run as administrator`.
