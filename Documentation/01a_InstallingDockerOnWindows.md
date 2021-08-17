@@ -1,4 +1,4 @@
-# Installing Docker on Windows 10
+# [Installing Docker on Windows 10](https://youtu.be/lIkxbE_We1I)
 
 * First make sure Windows is up-to-date.
   * In the Windows search type "Windows Update" and select `Windows Update setting`
