@@ -21,6 +21,12 @@ To stop the Docker container, from the Docker CLI windows press [Control]-C.
 Edit the `docker-compose.yml` file changing the `/app` path appropriately, or replace the code in
 `/app` with your code.
 
+## NOTE: Filesystem across Windows and WSL2
+
+You will need to put your project on the Linux side of WSL2 to get proper performance and permissions.
+
+https://docs.microsoft.com/en-us/windows/wsl/compare-versions#performance-across-os-file-systems
+
 ## To change the PHP version
 
 Stop the Docker containers.
