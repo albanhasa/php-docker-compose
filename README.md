@@ -23,7 +23,7 @@ Edit the `docker-compose.yml` file changing the `/app` path appropriately, or re
 
 ## NOTE: Filesystem across Windows and WSL2
 
-You will need to put your project on the Linux side of WSL2 to get proper performance and permissions.
+You may need to put your project on the Linux side of WSL2 to get better performance and file permissions.
 
 https://docs.microsoft.com/en-us/windows/wsl/compare-versions#performance-across-os-file-systems
 
