@@ -79,18 +79,7 @@ The profile file will be called `profile.out`.
 Other statistic like garbage collect `gcstats.out` and trace `trace.out.txt` can alos be found
 in xdebug.info.
 
-## PHP Testing
-
-Several tools for testing PHP code are installed by default.
-
-### PHPUnit
-
-PhpUnit [https://phpunit.de/](https://phpunit.de/) is installed by default and can be run inside the server 
-container with `phpunit`.
-
-`docker exec -it php-docker-compose_dev-server_1 bash`
-
-user@45640a57cf9f:/app$ `phpunit (command)`
+## Testing
 
 ### Codeception
 
@@ -100,11 +89,6 @@ the dev-server container with `codeception`.
 `docker exec -it php-docker-compose_dev-server_1 bash`
 
 user@45640a57cf9f:/app$ `codeception (command)`
-
-### Other code testing tools
-
-Other tools included in the dev-server container include phing, phpcpd, phploc, phpmd and php_codesniffer.
-
 
 ## MariaDB
 

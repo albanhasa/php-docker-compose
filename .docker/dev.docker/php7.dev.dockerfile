@@ -41,18 +41,7 @@ RUN cd ~ \
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=bin --filename=composer \
     && chmod u+x ~/bin/composer
 # Add our script files to the path so they can be found
-ENV PATH ~/bin:~/.composer/vendor/bin:$PATH
-
-#############################################################################
-# Setup PHP developer tools
-#############################################################################
-RUN ~/bin/composer -n --no-ansi global require \
-       phpunit/phpunit \
-       phing/phing \
-       sebastian/phpcpd \
-       phploc/phploc \
-       phpmd/phpmd \
-       squizlabs/php_codesniffer
+ENV PATH /app/vendor/bin:/var/www/vendor/bin:~/bin:~/.composer/vendor/bin:$PATH
 
 ############################################################################
 # Isntall Codeception native

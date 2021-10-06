@@ -26,3 +26,4 @@ extras/documentation
 # JetBrains IDE
 .idea/
 
+xdebug.info/
