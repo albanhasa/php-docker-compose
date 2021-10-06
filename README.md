@@ -156,7 +156,4 @@ Docker Desktop after you start PhpStorm.  If you do not, PhpStorm may hand on In
 JetBrains products.  You can "Exit" Docker Desktop restart PhpStorm let it finish indexing then restart Docker Desktop 
 as well to get passed the PhpStorm hang.
 
-https://github.com/docker/compose/issues/7899
-exiting and restarting the shell seems to "fix".
-
 Sometimes you will just need to purge all the images `docker system prune -a` and restart Docker.
