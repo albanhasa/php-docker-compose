@@ -164,6 +164,11 @@ This is just a starting point.  Use this project a template for starting or movi
 
 # Known Issues with Windows 10 and WSL
 
+10/6/2021 - If you are using the PhpStorm and your files are in the wsl os, ie `\\wsl$\...`, you will need to start 
+Docker Desktop after you start PhpStor.  If you do you PhpStorm may hand on Indexing.  This may also apply to other
+JetBrains products.  You can "Exit" Docker Desktop restart PhpStorm let it finish indexing then restart Docker Desktop 
+as well to get pass the PhpStorm hang.
+
 https://github.com/docker/compose/issues/7899
 exiting and restarting the shell seems to "fix".
 
