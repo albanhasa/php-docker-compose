@@ -7,7 +7,7 @@
 * Next install [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
   * From the Windows Search Type "powershell" then right-click on `Windows PowerShell` and then `Run as administrator`.
   * Click `Yes' to allow PowerShell to make changes to your device.
-  * In the Administrator: Windows PowerShell window run (copy and past) "wsl –install" to install Windows Services for 
+  * In the Administrator: Windows PowerShell window run (copy and past) "~~wsl –install~~" to install Windows Services for 
   Linux (wsl).  As of 10/6/2021 it look like you need to use the command "wsl --install -d Ubuntu".
   * Next enable the Virtual Machine Platform.  In the Administrator: Windows PowerShell run (copy and past)
   "dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart".
