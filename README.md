@@ -10,6 +10,7 @@ Make sure you have Docker and Docker Compose installed.
 
 [Installing Docker on Windows 10](Documentation/01a_InstallingDockerOnWindows.md)
 
+[Youtube: Installing Docker on Windows 10](https://youtu.be/lIkxbE_We1I)
 
 From the directory root of the project run `docker-compose up` open your browser to 
 [http://localhost:8001](http://localhost:8001).
@@ -60,7 +61,7 @@ The XDebug configuration for the command line can be found in `./docker/php/conf
 
 The command line is not configured for debugging by default, but is configured for profiling and coverage.
 This is to support PHPUnit and Codeception.  It also keeps the IDE debugger from being triggered by the PHP
-cli tools.
+cli tools.  You can change this behaviour by editing the `./docker/php/confi.d` file.
 
 ### Web (HTTP)
 
@@ -69,14 +70,17 @@ XDebug for the web with breakpoints is accomplished via the environment variable
 During dev server startup the XDebug environment variables override the CLI setup. XDebug will attempt
 to open a connection back to your IDE on port 9000 for web requests.
 
+You can edit the line `command: bash -c 'export XDEBUG_MODE=debug,develop,gcstats,profile,trace XDEBUG_CONFIG="remote_enable=on"; php -S 0.0.0.0:80 -t /app/html'`
+in the `docker-compose.yml` file to change this behaviour.
+
 ### Code Profiling
 
-Execution statistics will be dumped in xdebug.info.  You can use profiling tools like
+Execution statistics will be dumped in `\xdebug.info`.  You can use profiling tools like
 PhpStorms' Tools->Analyze XDebug Profile Snapshot.
 
 The profile file will be called `profile.out`.
 
-Other statistic like garbage collect `gcstats.out` and trace `trace.out.txt` can alos be found
+Other statistic like garbage collect `gcstats.out` and trace `trace.out.txt` can also be found
 in xdebug.info.
 
 ## Testing
@@ -102,13 +106,12 @@ default database name.
 
 ### Startup DB
 
-A startup database can be created by placing a scrip in the `docker-entrypoint-initdb.d` directory.  See the 
+A startup database can be created by placing a scrip in the `db-startup` directory.  See the 
 [README.md](db-startup/README.md) file in that directory for detail.
 
 ## Redis
 
-The `docker-compose.yml` include a Redis cache server by default.  Most scalable PHP environments use Redis 
-to improve performance.  
+The `docker-compose.yml` includes a Redis cache server.
 
 To access to Redis web tool open [http://localhost:9083](http://localhost:9083).
 
