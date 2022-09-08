@@ -157,3 +157,8 @@ JetBrains products.  You can "Exit" Docker Desktop restart PhpStorm let it finis
 as well to get passed the PhpStorm hang.
 
 Sometimes you will just need to purge all the images `docker system prune -a` and restart Docker.
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
